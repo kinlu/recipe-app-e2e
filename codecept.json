@@ -1,0 +1,46 @@
+{
+  "output": "./output",
+  "helpers": {
+    "Puppeteer": {
+      "chrome": {
+        "args": [
+          "--no-sandbox"
+        ]
+      },
+      "show": false
+    }
+  },
+  "include": {
+    "recipesPage": "./pages/recipes.js",
+    "shoppinglistPage": "./pages/shopping-list.js"
+  },
+  "mocha": {
+    "reporterOptions": {
+      "codeceptjs-cli-reporter": {
+        "stdout": "-",
+        "options": {
+          "steps": true
+        }
+      },
+      "mochawesome": {
+       "stdout": "./output/console.log",
+       "options": {
+         "reportDir": "./output",
+         "reportFilename": "report"
+        }
+      }
+    }
+  },
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "gherkin": {},
+  "plugins": {
+    "screenshotOnFail": {
+      "enabled": true
+    }
+  },
+  "tests": "./tests/*_test.js",
+  "timeout": 10000,
+  "name": "recipe-app-e2e"
+}

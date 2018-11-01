@@ -1,0 +1,28 @@
+{
+  "name": "recipe-app-e2e",
+  "version": "1.0.0",
+  "description": "This is for the end-to-end test of the recipe-app",
+  "main": "''",
+  "scripts": {
+    "test": "codeceptjs run --steps --tests --reporter mocha-multi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kinlu/recipe-app-e2e.git"
+  },
+  "keywords": [
+    "e2e"
+  ],
+  "author": "King Lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinlu/recipe-app-e2e/issues"
+  },
+  "homepage": "https://github.com/kinlu/recipe-app-e2e#readme",
+  "devDependencies": {
+    "codeceptjs": "^1.4.4",
+    "mocha-multi": "^1.0.1",
+    "mochawesome": "^3.1.1",
+    "puppeteer": "^1.9.0"
+  }
+}
