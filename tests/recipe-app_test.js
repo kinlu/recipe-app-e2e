@@ -14,9 +14,7 @@ const data = {
 }
 
 Scenario('Add ingredient', (I, recipesPage, shoppinglistPage) => {
-	I.amOnPage('https://receipe-app.herokuapp.com/');
-	I.see('Recipe Book');
-
+	recipesPage.landOnRecipeApp();
 	recipesPage.addToShoppingList(data.recipe);
 	shoppinglistPage.addIngredient(data.new_ingredient.name, data.new_ingredient.amount);
 	const ingredientText = data.new_ingredient.name + ' (' + data.new_ingredient.amount + ')'
@@ -25,21 +23,16 @@ Scenario('Add ingredient', (I, recipesPage, shoppinglistPage) => {
 });
 
 Scenario('Update ingredient', (I, recipesPage, shoppinglistPage) => {
-	I.amOnPage('https://receipe-app.herokuapp.com/');
-	I.see('Recipe Book');
-
+	recipesPage.landOnRecipeApp();
 	recipesPage.addToShoppingList(data.recipe);
 	shoppinglistPage.updateIngredient(data.update_ingredient.name, data.update_ingredient.amount);
-
 	const ingredientText = data.update_ingredient.name + ' (' + data.update_ingredient.amount + ')'
 	I.see(ingredientText);
 
 });
 
 Scenario('Delete ingredient', async(I, recipesPage, shoppinglistPage) => {
-	I.amOnPage('https://receipe-app.herokuapp.com/');
-	I.see('Recipe Book');
-
+	recipesPage.landOnRecipeApp();
 	recipesPage.addToShoppingList(data.recipe);
 	shoppinglistPage.deleteIngredient();
 
